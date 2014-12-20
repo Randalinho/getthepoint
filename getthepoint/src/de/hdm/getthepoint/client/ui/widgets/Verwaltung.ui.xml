@@ -1,0 +1,60 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+	<ui:style>
+	
+	</ui:style>
+	<g:HTMLPanel>
+	
+	<g:VerticalPanel width="800px" height="240px">
+	
+		<g:TabLayoutPanel barHeight="30" barUnit="PX" width="80%" height="300px">
+			<g:tab>
+    			<g:customHeader>
+      			<g:Label>Wissenstest</g:Label>
+    			</g:customHeader>
+    			<g:Label>Wissenstest</g:Label>
+  			</g:tab>
+  			<g:tab>
+    			<g:customHeader>
+      			<g:Label>Fragenpool</g:Label>
+    			</g:customHeader>
+    			<g:Label>Fragenpool</g:Label>
+  			</g:tab>
+			<g:tab>
+    			<g:customHeader>
+      			<g:Label>Auswertungen</g:Label>
+    			</g:customHeader>
+    			<g:Label width="102px" height="37px">Auswertungen</g:Label>
+  			</g:tab>
+  			
+  			<g:tab>
+      			<g:header>CellTable</g:header>
+      		<g:FlowPanel>
+          
+      		</g:FlowPanel> 
+    		</g:tab>
+    		
+    		<g:tab>
+    			<g:customHeader>
+      				<g:Label>CellTable2</g:Label>
+    			</g:customHeader>
+    			
+    			<g:FlowPanel>
+    				<g:Label text="Kategorie" width="70px"/>
+    				<g:ListBox ui:field="libkategorie"/>
+    				<c:CellTable
+        				pageSize='15'
+        				ui:field='cellTable' width="100%">  
+        			
+        			</c:CellTable> 	 
+    			</g:FlowPanel> 
+  			</g:tab>
+  			
+		</g:TabLayoutPanel>
+		
+		</g:VerticalPanel>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 
