@@ -16,6 +16,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
 
+import de.hdm.getthepoint.shared.GetThePoint;
+import de.hdm.getthepoint.shared.GetThePointAsync;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 public class Verwaltung extends Composite {
@@ -40,7 +42,7 @@ public class Verwaltung extends Composite {
 
 	// Create a CellTable.
 	@UiField
-	CellTable<Contact> cellTable = new CellTable<Contact>();
+	CellTable<KategorieBo> cellTable = new CellTable<KategorieBo>();
 
 	@UiField
 	ListBox libkategorie;
@@ -53,20 +55,6 @@ public class Verwaltung extends Composite {
 		initWidget(uiBinder.createAndBindUi(this));
 
 		libkategorie.addItem("Test");
-
-		getThePoint.getTestString(new AsyncCallback<String>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onSuccess(String result) {
-
-			}
-		});
 
 		getThePoint.getAllKategorien(new AsyncCallback<List<KategorieBo>>() {
 
@@ -89,64 +77,64 @@ public class Verwaltung extends Composite {
 		cellTable.setPageSize(10);
 
 		// Create name column.
-		TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
+		TextColumn<KategorieBo> nameColumn = new TextColumn<KategorieBo>() {
 			@Override
-			public String getValue(Contact contact) {
-				return contact.name;
+			public String getValue(KategorieBo kategorie) {
+				return kategorie.getBezeichnung();
 			}
 		};
 
-		// Make the name column sortable.
-		nameColumn.setSortable(true);
-
-		// Create address column.
-		TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
-			@Override
-			public String getValue(Contact contact) {
-				return contact.address;
-			}
-		};
-
-		// Add the columns.
-		cellTable.addColumn(nameColumn, "Name");
-		cellTable.addColumn(addressColumn, "Adresse");
-
-		// Set the total row count. You might send an RPC request to determine
-		// the
-		// total row count.
-		cellTable.setRowCount(CONTACTS.size(), true);
-
-		// Set the range to display. In this case, our visible range is smaller
-		// than
-		// the data set.
-		cellTable.setVisibleRange(0, 3);
-
-		// Associate an async data provider to the table
-		// XXX: Use AsyncCallback in the method onRangeChanged
-		// to actaully get the data from the server side
-		AsyncDataProvider<Contact> provider = new AsyncDataProvider<Contact>() {
-			@Override
-			protected void onRangeChanged(HasData<Contact> display) {
-				int start = display.getVisibleRange().getStart();
-				int end = start + display.getVisibleRange().getLength();
-				end = end >= CONTACTS.size() ? CONTACTS.size() : end;
-				List<Contact> sub = CONTACTS.subList(start, end);
-				updateRowData(start, sub);
-			}
-		};
-
-		provider.addDataDisplay(cellTable);
-		provider.updateRowCount(CONTACTS.size(), true);
-
-		SimplePager pager = new SimplePager();
-		pager.setDisplay(cellTable);
-
-		// VerticalPanel vp = new VerticalPanel();
-		// vp.add(cellTable);
-		// vp.add(pager);
-		//
-		// // Add it to the root panel.
-		// RootPanel.get().add(vp);
+//		// Make the name column sortable.
+//		nameColumn.setSortable(true);
+//
+//		// Create address column.
+//		TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
+//			@Override
+//			public String getValue(Contact contact) {
+//				return contact.address;
+//			}
+//		};
+//
+//		// Add the columns.
+//		cellTable.addColumn(nameColumn, "Name");
+////		cellTable.addColumn(addressColumn, "Adresse");
+//
+//		// Set the total row count. You might send an RPC request to determine
+//		// the
+//		// total row count.
+//		cellTable.setRowCount(CONTACTS.size(), true);
+//
+//		// Set the range to display. In this case, our visible range is smaller
+//		// than
+//		// the data set.
+//		cellTable.setVisibleRange(0, 3);
+//
+//		// Associate an async data provider to the table
+//		// XXX: Use AsyncCallback in the method onRangeChanged
+//		// to actaully get the data from the server side
+//		AsyncDataProvider<Contact> provider = new AsyncDataProvider<Contact>() {
+//			@Override
+//			protected void onRangeChanged(HasData<Contact> display) {
+//				int start = display.getVisibleRange().getStart();
+//				int end = start + display.getVisibleRange().getLength();
+//				end = end >= CONTACTS.size() ? CONTACTS.size() : end;
+//				List<Contact> sub = CONTACTS.subList(start, end);
+//				updateRowData(start, sub);
+//			}
+//		};
+//
+//		provider.addDataDisplay(cellTable);
+//		provider.updateRowCount(CONTACTS.size(), true);
+//
+//		SimplePager pager = new SimplePager();
+//		pager.setDisplay(cellTable);
+//
+//		// VerticalPanel vp = new VerticalPanel();
+//		// vp.add(cellTable);
+//		// vp.add(pager);
+//		//
+//		// // Add it to the root panel.
+//		// RootPanel.get().add(vp);
 
 	}
 

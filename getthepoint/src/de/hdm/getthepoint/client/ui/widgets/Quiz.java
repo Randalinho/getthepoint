@@ -44,7 +44,7 @@ public class Quiz extends Composite implements HasText {
 
 	@UiHandler("hyperlink")
 	void onHyperlinkClick(ClickEvent event) {
-		RootPanel.get("quiz").clear();
-		RootPanel.get("quiz").add(wiVerwaltung);
+		RootPanel.get().clear();
+		RootPanel.get().add(wiVerwaltung);
 	}
 }
