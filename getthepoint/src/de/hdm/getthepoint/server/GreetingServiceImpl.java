@@ -2,9 +2,9 @@ package de.hdm.getthepoint.server;
 
 import java.util.List;
 
-import de.hdm.getthepoint.client.GreetingService;
 import de.hdm.getthepoint.server.db.DataAcces;
 import de.hdm.getthepoint.shared.FieldVerifier;
+import de.hdm.getthepoint.shared.GreetingService;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;

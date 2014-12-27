@@ -1,4 +1,4 @@
-package de.hdm.getthepoint.client;
+package de.hdm.getthepoint.shared;
 
 import java.util.List;
 

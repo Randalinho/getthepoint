@@ -19,6 +19,8 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 import de.hdm.getthepoint.shared.FieldVerifier;
+import de.hdm.getthepoint.shared.GreetingService;
+import de.hdm.getthepoint.shared.GreetingServiceAsync;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 /**
