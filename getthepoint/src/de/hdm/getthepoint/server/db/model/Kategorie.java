@@ -37,7 +37,7 @@ public class Kategorie implements java.io.Serializable {
 		this.lehrender = lehrender;
 		this.bezeichnung = bezeichnung;
 	}
-
+	
 	@Id
 	@GeneratedValue
 	@GenericGenerator(name = "increment", strategy = "increment")

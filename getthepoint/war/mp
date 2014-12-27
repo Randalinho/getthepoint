@@ -2143,4 +2143,285 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
   2014-12-20 22:58:12,735 [btpool0-0] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - schema update complete
   2014-12-20 22:58:13,064 [btpool0-0] INFO org.hibernate.impl.SessionFactoryImpl - closing
   2014-12-20 22:58:13,064 [btpool0-0] INFO org.hibernate.connection.DriverManagerConnectionProvider - cleaning up connection pool: jdbc:mysql://173.194.250.248:3306/getthepointdb
+  2014-12-20 23:20:12,237 [btpool0-2] INFO org.hibernate.annotations.common.Version - Hibernate Commons Annotations 3.2.0.Final
+  2014-12-20 23:20:12,237 [btpool0-2] INFO org.hibernate.cfg.Environment - Hibernate 3.6.10.Final
+  2014-12-20 23:20:12,252 [btpool0-2] INFO org.hibernate.cfg.Environment - hibernate.properties not found
+  2014-12-20 23:20:12,252 [btpool0-2] INFO org.hibernate.cfg.Environment - Bytecode provider name : javassist
+  2014-12-20 23:20:12,252 [btpool0-2] INFO org.hibernate.cfg.Environment - using JDK 1.4 java.sql.Timestamp handling
+  2014-12-20 23:20:12,299 [btpool0-2] INFO org.hibernate.ejb.Version - Hibernate EntityManager 3.6.10.Final
+  2014-12-20 23:20:12,440 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Kategorie
+  2014-12-20 23:20:12,471 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Kategorie on table Kategorie
+  2014-12-20 23:20:12,502 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Frage
+  2014-12-20 23:20:12,502 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Frage on table Frage
+  2014-12-20 23:20:12,518 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Wissenstest
+  2014-12-20 23:20:12,518 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Wissenstest on table Wissenstest
+  2014-12-20 23:20:12,518 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Antwort
+  2014-12-20 23:20:12,518 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Antwort on table Antwort
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Admin
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Admin on table Admin
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.ZuordungWissenstestFrage
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.ZuordungWissenstestFrage on table Zuordung_Wissenstest_Frage
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Ergebnis on table Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Lehrender
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Lehrender on table Lehrender
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Student
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Student on table Student
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.antworts -> Antwort
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.ergebnises -> Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.zuordungWissenstestFrages -> Zuordung_Wissenstest_Frage
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Wissenstest.ergebnises -> Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Wissenstest.zuordungWissenstestFrages -> Zuordung_Wissenstest_Frage
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Antwort.ergebnises -> Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Antwort.frages -> Frage
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Lehrender.kategories -> Kategorie
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Lehrender.wissenstests -> Wissenstest
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Student.ergebnises -> Ergebnis
+  2014-12-20 23:20:12,534 [btpool0-2] INFO org.hibernate.cfg.Configuration - Hibernate Validator not found: ignoring
+  2014-12-20 23:20:12,549 [btpool0-2] INFO org.hibernate.validator.util.Version - Hibernate Validator 4.0.2.GA
+  2014-12-20 23:20:12,549 [btpool0-2] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-20 23:20:12,612 [btpool0-2] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-20 23:20:12,612 [btpool0-2] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-20 23:20:12,612 [btpool0-2] INFO org.hibernate.cfg.search.HibernateSearchEventListenerRegister - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  2014-12-20 23:20:12,628 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - Using Hibernate built-in connection pool (not for production use!)
+  2014-12-20 23:20:12,628 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - Hibernate connection pool size: 20
+  2014-12-20 23:20:12,628 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - autocommit mode: true
+  2014-12-20 23:20:12,628 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://173.194.250.248:3306/getthepointdb
+  2014-12-20 23:20:12,628 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+  2014-12-20 23:20:20,030 [btpool0-2] INFO org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.MySQLDialect
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Database ->
+       name : MySQL
+    version : 5.5.38
+      major : 5
+      minor : 5
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.16 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.transaction.TransactionFactoryFactory - Using default transaction strategy (direct JDBC transactions)
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.transaction.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Automatic flush during beforeCompletion(): disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Automatic session close at end of transaction: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - JDBC batch size: 15
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - JDBC batch updates for versioned data: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Scrollable result sets: enabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - JDBC3 getGeneratedKeys(): enabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Connection release mode: auto
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Maximum outer join fetch depth: 2
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Default batch fetch size: 1
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Generate SQL with comments: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Order SQL updates by primary key: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Order SQL inserts for batching: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.hql.ast.ASTQueryTranslatorFactory - Using ASTQueryTranslatorFactory
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Query language substitutions: {}
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - JPA-QL strict compliance: enabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Second-level cache: enabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Query cache: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Optimize cache for minimal puts: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Structured second-level cache entries: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Statistics: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Deleted entity synthetic identifier rollback: disabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Default entity-mode: pojo
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Named query checking : enabled
+  2014-12-20 23:20:20,045 [btpool0-2] INFO org.hibernate.cfg.SettingsFactory - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.impl.SessionFactoryImpl - building session factory
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@7dada7f3
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@13ed82fb
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@4e3236f5
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [clob] overrides previous : org.hibernate.type.ClobType@42b636ee
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@42b636ee
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@48d06579
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@69b61047
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [blob] overrides previous : org.hibernate.type.BlobType@2fe6db89
+  2014-12-20 23:20:20,061 [btpool0-2] INFO org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@2fe6db89
+  2014-12-20 23:20:20,186 [btpool0-2] INFO org.hibernate.impl.SessionFactoryObjectFactory - Not binding factory to JNDI, no JNDI name configured
+  2014-12-20 23:20:20,186 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - Running hbm2ddl schema update
+  2014-12-20 23:20:20,186 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - fetching database metadata
+  2014-12-20 23:20:20,186 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - updating schema
+  2014-12-20 23:20:20,186 [btpool0-2] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-20 23:20:21,045 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Admin
+  2014-12-20 23:20:21,045 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, login, passwort]
+  2014-12-20 23:20:21,045 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-20 23:20:21,045 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-20 23:20:21,873 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Antwort
+  2014-12-20 23:20:21,873 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, text, frage-id]
+  2014-12-20 23:20:21,873 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_antwort_frage1]
+  2014-12-20 23:20:21,873 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_antwort_frage1_idx]
+  2014-12-20 23:20:22,707 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Ergebnis
+  2014-12-20 23:20:22,722 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, student-id, richtig, frage-id, wissenstest-id, antwort-id]
+  2014-12-20 23:20:22,722 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_ergebnis_antwort1, fk_ergebnis_student1, fk_ergebnis_wissenstest1, fk_ergebnis_frage1]
+  2014-12-20 23:20:22,722 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_ergebnis_frage1_idx, fk_ergebnis_wissenstest1_idx, fk_ergebnis_antwort1_idx, fk_ergebnis_student1_idx]
+  2014-12-20 23:20:23,550 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Frage
+  2014-12-20 23:20:23,550 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, loesung, text, bild, schwierigkeit, kategorie-id]
+  2014-12-20 23:20:23,550 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_frage_antwort1]
+  2014-12-20 23:20:23,550 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_frage_antwort1_idx]
+  2014-12-20 23:20:24,379 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Kategorie
+  2014-12-20 23:20:24,379 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [lehrender, bezeichnung, id, lehrender-id]
+  2014-12-20 23:20:24,379 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_kategorie_lehrender1]
+  2014-12-20 23:20:24,379 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_kategorie_lehrender1_idx]
+  2014-12-20 23:20:25,185 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Lehrender
+  2014-12-20 23:20:25,185 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, vorname, name]
+  2014-12-20 23:20:25,185 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-20 23:20:25,185 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-20 23:20:26,029 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Student
+  2014-12-20 23:20:26,029 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [kuerzel, id, vorname, name, matrikel-nr]
+  2014-12-20 23:20:26,029 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-20 23:20:26,029 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-20 23:20:26,857 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Wissenstest
+  2014-12-20 23:20:26,857 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [bezeichnung, starttyp, id, zeit-frage, lehrender-id, random, endzeit, startzeit, aktiv, gestartet]
+  2014-12-20 23:20:26,857 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_wissenstest_lehrender]
+  2014-12-20 23:20:26,857 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [fk_wissenstest_lehrender_idx, primary]
+  2014-12-20 23:20:27,701 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Zuordung_Wissenstest_Frage
+  2014-12-20 23:20:27,701 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, frage-id, wissenstest-id]
+  2014-12-20 23:20:27,701 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_zuordung_wissenstest_frage_wissenstest1, fk_zuordung_wissenstest_frage_frage1]
+  2014-12-20 23:20:27,701 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [fk_zuordung_wissenstest_frage_frage1_idx, primary, fk_zuordung_wissenstest_frage_wissenstest1_idx]
+  2014-12-20 23:20:27,888 [btpool0-2] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - Unsuccessful: alter table getthepointdb.Kategorie add index FK76EA791F8C8BD13D (lehrender), add constraint FK76EA791F8C8BD13D foreign key (lehrender) references getthepointdb.Lehrender (id)
+  2014-12-20 23:20:27,888 [btpool0-2] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - BLOB/TEXT column 'lehrender' used in key specification without a key length
+  2014-12-20 23:20:27,888 [btpool0-2] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - schema update complete
+  2014-12-20 23:20:28,263 [btpool0-2] INFO org.hibernate.impl.SessionFactoryImpl - closing
+  2014-12-20 23:20:28,263 [btpool0-2] INFO org.hibernate.connection.DriverManagerConnectionProvider - cleaning up connection pool: jdbc:mysql://173.194.250.248:3306/getthepointdb
+  2014-12-21 13:22:17,090 [qtp601123279-27] INFO org.hibernate.annotations.common.Version - Hibernate Commons Annotations 3.2.0.Final
+  2014-12-21 13:22:17,095 [qtp601123279-27] INFO org.hibernate.cfg.Environment - Hibernate 3.6.10.Final
+  2014-12-21 13:22:17,097 [qtp601123279-27] INFO org.hibernate.cfg.Environment - hibernate.properties not found
+  2014-12-21 13:22:17,099 [qtp601123279-27] INFO org.hibernate.cfg.Environment - Bytecode provider name : javassist
+  2014-12-21 13:22:17,101 [qtp601123279-27] INFO org.hibernate.cfg.Environment - using JDK 1.4 java.sql.Timestamp handling
+  2014-12-21 13:22:17,147 [qtp601123279-27] INFO org.hibernate.ejb.Version - Hibernate EntityManager 3.6.10.Final
+  2014-12-21 13:22:17,444 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Kategorie
+  2014-12-21 13:22:17,469 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Kategorie on table Kategorie
+  2014-12-21 13:22:17,504 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Wissenstest
+  2014-12-21 13:22:17,504 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Wissenstest on table Wissenstest
+  2014-12-21 13:22:17,536 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Student
+  2014-12-21 13:22:17,536 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Student on table Student
+  2014-12-21 13:22:17,538 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.ZuordungWissenstestFrage
+  2014-12-21 13:22:17,538 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.ZuordungWissenstestFrage on table Zuordung_Wissenstest_Frage
+  2014-12-21 13:22:17,539 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Admin
+  2014-12-21 13:22:17,539 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Admin on table Admin
+  2014-12-21 13:22:17,540 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Antwort
+  2014-12-21 13:22:17,540 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Antwort on table Antwort
+  2014-12-21 13:22:17,542 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Lehrender
+  2014-12-21 13:22:17,542 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Lehrender on table Lehrender
+  2014-12-21 13:22:17,544 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Ergebnis
+  2014-12-21 13:22:17,544 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Ergebnis on table Ergebnis
+  2014-12-21 13:22:17,545 [qtp601123279-27] INFO org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: de.hdm.getthepoint.server.db.model.Frage
+  2014-12-21 13:22:17,546 [qtp601123279-27] INFO org.hibernate.cfg.annotations.EntityBinder - Bind entity de.hdm.getthepoint.server.db.model.Frage on table Frage
+  2014-12-21 13:22:17,574 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Wissenstest.ergebnises -> Ergebnis
+  2014-12-21 13:22:17,575 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Wissenstest.zuordungWissenstestFrages -> Zuordung_Wissenstest_Frage
+  2014-12-21 13:22:17,575 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Student.ergebnises -> Ergebnis
+  2014-12-21 13:22:17,575 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Antwort.ergebnises -> Ergebnis
+  2014-12-21 13:22:17,575 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Antwort.frages -> Frage
+  2014-12-21 13:22:17,576 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Lehrender.kategories -> Kategorie
+  2014-12-21 13:22:17,576 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Lehrender.wissenstests -> Wissenstest
+  2014-12-21 13:22:17,576 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.antworts -> Antwort
+  2014-12-21 13:22:17,576 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.ergebnises -> Ergebnis
+  2014-12-21 13:22:17,576 [qtp601123279-27] INFO org.hibernate.cfg.annotations.CollectionBinder - Mapping collection: de.hdm.getthepoint.server.db.model.Frage.zuordungWissenstestFrages -> Zuordung_Wissenstest_Frage
+  2014-12-21 13:22:17,577 [qtp601123279-27] INFO org.hibernate.cfg.Configuration - Hibernate Validator not found: ignoring
+  2014-12-21 13:22:17,587 [qtp601123279-27] INFO org.hibernate.validator.util.Version - Hibernate Validator 4.0.2.GA
+  2014-12-21 13:22:17,597 [qtp601123279-27] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-21 13:22:17,650 [qtp601123279-27] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-21 13:22:17,658 [qtp601123279-27] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-21 13:22:17,667 [qtp601123279-27] INFO org.hibernate.cfg.search.HibernateSearchEventListenerRegister - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+  2014-12-21 13:22:17,673 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - Using Hibernate built-in connection pool (not for production use!)
+  2014-12-21 13:22:17,673 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - Hibernate connection pool size: 20
+  2014-12-21 13:22:17,673 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - autocommit mode: true
+  2014-12-21 13:22:17,680 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://173.194.250.248:3306/getthepointdb
+  2014-12-21 13:22:17,680 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+  2014-12-21 13:22:25,268 [qtp601123279-27] INFO org.hibernate.dialect.Dialect - Using dialect: org.hibernate.dialect.MySQLDialect
+  2014-12-21 13:22:25,274 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Database ->
+       name : MySQL
+    version : 5.5.38
+      major : 5
+      minor : 5
+  2014-12-21 13:22:25,274 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.16 ( Revision: ${bzr.revision-id} )
+      major : 5
+      minor : 1
+  2014-12-21 13:22:25,275 [qtp601123279-27] INFO org.hibernate.transaction.TransactionFactoryFactory - Using default transaction strategy (direct JDBC transactions)
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.transaction.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Automatic flush during beforeCompletion(): disabled
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Automatic session close at end of transaction: disabled
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - JDBC batch size: 15
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - JDBC batch updates for versioned data: disabled
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Scrollable result sets: enabled
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - JDBC3 getGeneratedKeys(): enabled
+  2014-12-21 13:22:25,276 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Connection release mode: auto
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Maximum outer join fetch depth: 2
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Default batch fetch size: 1
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Generate SQL with comments: disabled
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Order SQL updates by primary key: disabled
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Order SQL inserts for batching: disabled
+  2014-12-21 13:22:25,277 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.hql.ast.ASTQueryTranslatorFactory - Using ASTQueryTranslatorFactory
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Query language substitutions: {}
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - JPA-QL strict compliance: enabled
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Second-level cache: enabled
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Query cache: disabled
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Optimize cache for minimal puts: disabled
+  2014-12-21 13:22:25,278 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Structured second-level cache entries: disabled
+  2014-12-21 13:22:25,281 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Statistics: disabled
+  2014-12-21 13:22:25,281 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Deleted entity synthetic identifier rollback: disabled
+  2014-12-21 13:22:25,281 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Default entity-mode: pojo
+  2014-12-21 13:22:25,281 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Named query checking : enabled
+  2014-12-21 13:22:25,282 [qtp601123279-27] INFO org.hibernate.cfg.SettingsFactory - Check Nullability in Core (should be disabled when Bean Validation is on): disabled
+  2014-12-21 13:22:25,292 [qtp601123279-27] INFO org.hibernate.impl.SessionFactoryImpl - building session factory
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@591c4b8a
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@50a37eba
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@1dd50eb2
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [clob] overrides previous : org.hibernate.type.ClobType@eb7d76b
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@eb7d76b
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@479fb959
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@4741a6cb
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [blob] overrides previous : org.hibernate.type.BlobType@272d7df9
+  2014-12-21 13:22:25,295 [qtp601123279-27] INFO org.hibernate.type.BasicTypeRegistry - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@272d7df9
+  2014-12-21 13:22:25,402 [qtp601123279-27] INFO org.hibernate.impl.SessionFactoryObjectFactory - Not binding factory to JNDI, no JNDI name configured
+  2014-12-21 13:22:25,404 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - Running hbm2ddl schema update
+  2014-12-21 13:22:25,404 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - fetching database metadata
+  2014-12-21 13:22:25,405 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - updating schema
+  2014-12-21 13:22:25,406 [qtp601123279-27] INFO org.hibernate.validator.engine.resolver.DefaultTraversableResolver - Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+  2014-12-21 13:22:26,185 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Admin
+  2014-12-21 13:22:26,185 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, login, passwort]
+  2014-12-21 13:22:26,185 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-21 13:22:26,185 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-21 13:22:26,993 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Antwort
+  2014-12-21 13:22:26,993 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, text, frage-id]
+  2014-12-21 13:22:26,993 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_antwort_frage1]
+  2014-12-21 13:22:26,993 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_antwort_frage1_idx]
+  2014-12-21 13:22:27,781 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Ergebnis
+  2014-12-21 13:22:27,781 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, student-id, richtig, frage-id, wissenstest-id, antwort-id]
+  2014-12-21 13:22:27,781 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_ergebnis_antwort1, fk_ergebnis_student1, fk_ergebnis_wissenstest1, fk_ergebnis_frage1]
+  2014-12-21 13:22:27,781 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_ergebnis_frage1_idx, fk_ergebnis_wissenstest1_idx, fk_ergebnis_antwort1_idx, fk_ergebnis_student1_idx]
+  2014-12-21 13:22:28,547 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Frage
+  2014-12-21 13:22:28,547 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, loesung, text, bild, schwierigkeit, kategorie-id]
+  2014-12-21 13:22:28,547 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_frage_antwort1]
+  2014-12-21 13:22:28,547 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_frage_antwort1_idx]
+  2014-12-21 13:22:29,315 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Kategorie
+  2014-12-21 13:22:29,315 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [lehrender, bezeichnung, id, lehrender-id]
+  2014-12-21 13:22:29,315 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_kategorie_lehrender1]
+  2014-12-21 13:22:29,315 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary, fk_kategorie_lehrender1_idx]
+  2014-12-21 13:22:30,073 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Lehrender
+  2014-12-21 13:22:30,074 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, vorname, name]
+  2014-12-21 13:22:30,074 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-21 13:22:30,074 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-21 13:22:30,834 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Student
+  2014-12-21 13:22:30,834 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [kuerzel, id, vorname, name, matrikel-nr]
+  2014-12-21 13:22:30,834 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: []
+  2014-12-21 13:22:30,835 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [primary]
+  2014-12-21 13:22:31,614 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Wissenstest
+  2014-12-21 13:22:31,614 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [bezeichnung, starttyp, id, zeit-frage, lehrender-id, random, endzeit, startzeit, aktiv, gestartet]
+  2014-12-21 13:22:31,614 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_wissenstest_lehrender]
+  2014-12-21 13:22:31,614 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [fk_wissenstest_lehrender_idx, primary]
+  2014-12-21 13:22:32,425 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - table found: getthepointdb.Zuordung_Wissenstest_Frage
+  2014-12-21 13:22:32,425 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - columns: [id, frage-id, wissenstest-id]
+  2014-12-21 13:22:32,425 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - foreign keys: [fk_zuordung_wissenstest_frage_wissenstest1, fk_zuordung_wissenstest_frage_frage1]
+  2014-12-21 13:22:32,425 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.TableMetadata - indexes: [fk_zuordung_wissenstest_frage_frage1_idx, primary, fk_zuordung_wissenstest_frage_wissenstest1_idx]
+  2014-12-21 13:22:32,590 [qtp601123279-27] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - Unsuccessful: alter table getthepointdb.Kategorie add index FK76EA791F8C8BD13D (lehrender), add constraint FK76EA791F8C8BD13D foreign key (lehrender) references getthepointdb.Lehrender (id)
+  2014-12-21 13:22:32,590 [qtp601123279-27] ERROR org.hibernate.tool.hbm2ddl.SchemaUpdate - BLOB/TEXT column 'lehrender' used in key specification without a key length
+  2014-12-21 13:22:32,591 [qtp601123279-27] INFO org.hibernate.tool.hbm2ddl.SchemaUpdate - schema update complete
+  2014-12-21 13:22:32,936 [qtp601123279-27] INFO org.hibernate.impl.SessionFactoryImpl - closing
+  2014-12-21 13:22:32,936 [qtp601123279-27] INFO org.hibernate.connection.DriverManagerConnectionProvider - cleaning up connection pool: jdbc:mysql://173.194.250.248:3306/getthepointdb
+  2014-12-21 14:22:14,234 [Finalizer] INFO org.hibernate.connection.DriverManagerConnectionProvider - cleaning up connection pool: jdbc:mysql://173.194.250.248:3306/getthepointdb
   
