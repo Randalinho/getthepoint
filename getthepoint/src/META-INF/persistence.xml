@@ -23,7 +23,14 @@
         </description>
 
 		<class>de.hdm.getthepoint.server.db.model.Kategorie</class>
-
+		<class>de.hdm.getthepoint.server.db.model.Antwort</class>
+		<class>de.hdm.getthepoint.server.db.model.Admin</class>
+		<class>de.hdm.getthepoint.server.db.model.Ergebnis</class>
+		<class>de.hdm.getthepoint.server.db.model.Frage</class>
+		<class>de.hdm.getthepoint.server.db.model.Lehrender</class>
+		<class>de.hdm.getthepoint.server.db.model.Student</class>
+		<class>de.hdm.getthepoint.server.db.model.Wissenstest</class>
+		<class>de.hdm.getthepoint.server.db.model.ZuordnungWissenstestFrage</class>
 
 		<properties>
 			<property name="datanucleus.storeManagerType" value="true" />
