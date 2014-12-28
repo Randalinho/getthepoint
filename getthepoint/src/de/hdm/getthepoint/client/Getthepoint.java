@@ -2,10 +2,8 @@ package de.hdm.getthepoint.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
+
 import de.hdm.getthepoint.client.ui.widgets.Quiz;
 import de.hdm.getthepoint.shared.GetThePoint;
 import de.hdm.getthepoint.shared.GetThePointAsync;
@@ -23,6 +21,7 @@ public class Getthepoint implements EntryPoint {
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.";
 	GetThePointAsync getThePoint = GWT.create(GetThePoint.class);
+
 	final Quiz myQuiz = new Quiz();
 	FrageBo frage;
 	String string;
@@ -31,7 +30,7 @@ public class Getthepoint implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		
+
 		// getThePoint.getFragebyId(1, new AsyncCallback<FrageBo>() {
 		//
 		// @Override
@@ -46,9 +45,9 @@ public class Getthepoint implements EntryPoint {
 		//
 		// }
 		// });
-		
+
 		// final Label errorLabel = new Label();
-//		RootPanel.get().add(nameField);
+		// RootPanel.get().add(nameField);
 		RootPanel.get().add(myQuiz);
 	}
 }

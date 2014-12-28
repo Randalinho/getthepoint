@@ -3,8 +3,10 @@
 	<classpathentry kind="src" output="test-classes" path="test"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="lib" path="libs/gwtbootstrap3-0.8.1.jar"/>
+	<classpathentry kind="lib" path="libs/gwtbootstrap3-extras-0.8.1.jar"/>
 	<classpathentry kind="lib" path="libs/mysql-connector-java-5.1.16.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
