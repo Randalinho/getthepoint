@@ -1,6 +1,6 @@
 package de.hdm.getthepoint.server.db.model;
 
-// Generated 28.11.2014 00:27:43 by Hibernate Tools 4.3.1
+// Generated 30.12.2014 21:24:32 by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +17,6 @@ import javax.persistence.Table;
 @Table(name = "Zuordung_Wissenstest_Frage", catalog = "getthepointdb")
 public class ZuordungWissenstestFrage implements java.io.Serializable {
 
-	private static final long serialVersionUID = -4375545942172609401L;
 	private int id;
 	private Frage frage;
 	private Wissenstest wissenstest;

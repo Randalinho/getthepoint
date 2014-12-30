@@ -55,7 +55,7 @@ public class DataAcces {
 		getEntityManager();
 
 		List<Frage> list = entityManager.createQuery(
-				"Select frage FROM Frage frage where frage.id = " + kategorie_id, Frage.class)
+				"Select frage FROM Frage frage where frage.kategorieId = " + kategorie_id, Frage.class)
 				.getResultList();
 
 		closeEntityManagerAndFactory();

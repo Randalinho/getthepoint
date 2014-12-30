@@ -1,6 +1,6 @@
 package de.hdm.getthepoint.server.db.model;
 
-// Generated 28.11.2014 00:27:43 by Hibernate Tools 4.3.1
+// Generated 30.12.2014 21:24:32 by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -23,7 +23,6 @@ import javax.persistence.TemporalType;
 @Table(name = "Wissenstest", catalog = "getthepointdb")
 public class Wissenstest implements java.io.Serializable {
 
-	private static final long serialVersionUID = 7189800620813601901L;
 	private int id;
 	private Lehrender lehrender;
 	private Date startzeit;
@@ -33,6 +32,7 @@ public class Wissenstest implements java.io.Serializable {
 	private Character starttyp;
 	private Character gestartet;
 	private Character aktiv;
+	private String bezeichnung;
 	private Set<ZuordungWissenstestFrage> zuordungWissenstestFrages = new HashSet<ZuordungWissenstestFrage>(
 			0);
 	private Set<Ergebnis> ergebnises = new HashSet<Ergebnis>(0);
@@ -47,6 +47,7 @@ public class Wissenstest implements java.io.Serializable {
 	public Wissenstest(int id, Lehrender lehrender, Date startzeit,
 			Date endzeit, Integer zeitFrage, Character random,
 			Character starttyp, Character gestartet, Character aktiv,
+			String bezeichnung,
 			Set<ZuordungWissenstestFrage> zuordungWissenstestFrages,
 			Set<Ergebnis> ergebnises) {
 		this.id = id;
@@ -58,6 +59,7 @@ public class Wissenstest implements java.io.Serializable {
 		this.starttyp = starttyp;
 		this.gestartet = gestartet;
 		this.aktiv = aktiv;
+		this.bezeichnung = bezeichnung;
 		this.zuordungWissenstestFrages = zuordungWissenstestFrages;
 		this.ergebnises = ergebnises;
 	}
@@ -145,6 +147,15 @@ public class Wissenstest implements java.io.Serializable {
 
 	public void setAktiv(Character aktiv) {
 		this.aktiv = aktiv;
+	}
+
+	@Column(name = "bezeichnung", length = 45)
+	public String getBezeichnung() {
+		return this.bezeichnung;
+	}
+
+	public void setBezeichnung(String bezeichnung) {
+		this.bezeichnung = bezeichnung;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "wissenstest")
