@@ -9,6 +9,7 @@ import de.hdm.getthepoint.server.db.model.Antwort;
 import de.hdm.getthepoint.server.db.model.Frage;
 import de.hdm.getthepoint.shared.bo.AntwortBo;
 import de.hdm.getthepoint.shared.bo.FrageBo;
+import de.hdm.getthepoint.shared.enums.Schwierigkeit;
 
 public class FrageMapper implements DbMapperInterface<FrageBo, Frage> {
 
@@ -37,6 +38,20 @@ public class FrageMapper implements DbMapperInterface<FrageBo, Frage> {
 		// frageBo.setBild(dbmodel.getBild()); TODO richtigen Datentyp für Bild
 		// TODO Kategorie
 
+		switch (dbmodel.getSchwierigkeit()) {
+		case 0:
+			frageBo.setSchwierigkeit(Schwierigkeit.LEICHT);
+			break;
+		case 1:
+			frageBo.setSchwierigkeit(Schwierigkeit.MITTEL);
+			break;
+		case 2:
+			frageBo.setSchwierigkeit(Schwierigkeit.SCHWER);
+			break;
+		default:
+			break;
+		}
+
 		frageBo.setAntwortmoeglichkeiten(antwortMapper
 				.getModelsAsList(new ArrayList<>(dbmodel.getAntworts())));
 		frageBo.setLoesung(antwortMapper.getModel(dbmodel.getAntwort()));
@@ -52,6 +67,21 @@ public class FrageMapper implements DbMapperInterface<FrageBo, Frage> {
 
 		for (AntwortBo antwort : model.getAntwortmoeglichkeiten()) {
 			antwortmoeglichkeiten.add(antwortMapper.getDbModel(antwort));
+		}
+
+		switch (model.getSchwierigkeit()) {
+		case LEICHT:
+			frage.setSchwierigkeit(0);
+			break;
+		case MITTEL:
+			frage.setSchwierigkeit(1);
+			break;
+		case SCHWER:
+			frage.setSchwierigkeit(2);
+			break;
+
+		default:
+			break;
 		}
 
 		frage.setAntworts(antwortmoeglichkeiten);
