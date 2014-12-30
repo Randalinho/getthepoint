@@ -2,6 +2,8 @@ package de.hdm.getthepoint.shared.bo;
 
 import java.util.List;
 
+import de.hdm.getthepoint.shared.enums.Schwierigkeit;
+
 public class FrageBo extends BusinessObject {
 
 	private static final long serialVersionUID = 1632688091736338890L;
@@ -15,6 +17,8 @@ public class FrageBo extends BusinessObject {
 	private AntwortBo loesung;
 
 	private String bild;
+
+	private Schwierigkeit schwierigkeit;
 
 	public String getText() {
 		return text;
@@ -56,8 +60,12 @@ public class FrageBo extends BusinessObject {
 		this.bild = bild;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public Schwierigkeit getSchwierigkeit() {
+		return schwierigkeit;
+	}
+
+	public void setSchwierigkeit(Schwierigkeit schwierigkeit) {
+		this.schwierigkeit = schwierigkeit;
 	}
 
 }
