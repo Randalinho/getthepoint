@@ -5,19 +5,19 @@ import java.util.List;
 import org.junit.Test;
 
 import de.hdm.getthepoint.server.db.DataAcces;
-import de.hdm.getthepoint.shared.bo.FrageBo;
+import de.hdm.getthepoint.server.db.model.Frage;
 
-public class QueryTesting {
+public class QueryTestingFrageByKategorie {
 
 	@Test
 	public void test() {
 
 		DataAcces dataAcces = new DataAcces();
 
-		List<FrageBo> liste = dataAcces.getFragenByKategorie(1);
+		List<Frage> liste = dataAcces.getFragenByKategorie(1);
 
-		for (FrageBo frageBo : liste) {
-			System.out.println(frageBo.getText());
+		for (Frage frage : liste) {
+			System.out.println(frage.getText());
 		}
 	}
 

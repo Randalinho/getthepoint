@@ -1,4 +1,5 @@
 package de.hdm.getthepoint.server.db.model;
+
 // Generated 30.12.2014 21:24:32 by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
@@ -15,8 +16,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Student", catalog = "getthepointdb")
-public class Student implements java.io.Serializable {
+public class Student extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9181040556325482020L;
 	private int id;
 	private String matrikelNr;
 	private String name;
@@ -51,7 +56,7 @@ public class Student implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "matrikel-nr", length = 45)
+	@Column(name = "matrikel_nr", length = 45)
 	public String getMatrikelNr() {
 		return this.matrikelNr;
 	}

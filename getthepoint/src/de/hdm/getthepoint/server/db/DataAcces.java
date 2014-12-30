@@ -6,11 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import de.hdm.getthepoint.server.db.mapper.*;
 import de.hdm.getthepoint.server.db.model.Frage;
 import de.hdm.getthepoint.server.db.model.Kategorie;
-import de.hdm.getthepoint.shared.bo.FrageBo;
-import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 /**
  * Klasse f&uuml;r alle Datenbankzugriffe.
@@ -26,41 +23,30 @@ public class DataAcces {
 
 	private static final String PERSISTENCEUNIT = "getthepoint";
 
-	private KategorieMapper kategorieMapper;
-	private FrageMapper frageMapper;
-
 	public DataAcces() {
-		kategorieMapper = new KategorieMapper();
-		frageMapper = new FrageMapper();
+		getEntityManager();
 	}
 
 /**
 	 * Methode zum Abrugen aller {@link Kategorie). Diese werden direkt in eine Liste von KategorieBo gemappt.
 	 * @return
 	 */
-	public List<KategorieBo> getAllKategorie() {
-
-		getEntityManager();
+	public List<Kategorie> getAllKategorie() {
 
 		List<Kategorie> list = entityManager.createQuery(
 				"Select kategorie FROM Kategorie kategorie", Kategorie.class)
 				.getResultList();
 
-		closeEntityManagerAndFactory();
-
-		return kategorieMapper.getModelsAsList(list);
+		return list;
 	}
-	
-	public List<FrageBo> getFragenByKategorie(int kategorie_id){
-		getEntityManager();
+
+	public List<Frage> getFragenByKategorie(int kategorie_id) {
 
 		List<Frage> list = entityManager.createQuery(
-				"Select frage FROM Frage frage where frage.kategorieId = " + kategorie_id, Frage.class)
-				.getResultList();
+				"Select frage FROM Frage frage where frage.kategorie = "
+						+ kategorie_id, Frage.class).getResultList();
 
-		closeEntityManagerAndFactory();
-
-		return frageMapper.getModelsAsList(list);
+		return list;
 	}
 
 	/**
@@ -78,7 +64,7 @@ public class DataAcces {
 	/**
 	 * Schlieﬂt den {@link EntityManager} und die {@link EntityManagerFactory};
 	 */
-	private void closeEntityManagerAndFactory() {
+	public void closeEntityManagerAndFactory() {
 		entityManager.close();
 		entityManagerFactory.close();
 	}

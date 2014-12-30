@@ -12,8 +12,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Admin", catalog = "getthepointdb")
-public class Admin implements java.io.Serializable {
+public class Admin extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 895799225419210507L;
 	private int id;
 	private String login;
 	private String passwort;

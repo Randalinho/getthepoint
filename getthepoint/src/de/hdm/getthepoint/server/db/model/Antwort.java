@@ -18,8 +18,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Antwort", catalog = "getthepointdb")
-public class Antwort implements java.io.Serializable {
+public class Antwort extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4532428067635261546L;
 	private int id;
 	private Frage frage;
 	private String text;
@@ -53,7 +57,7 @@ public class Antwort implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "frage-id")
+	@JoinColumn(name = "frage_id")
 	public Frage getFrage() {
 		return this.frage;
 	}

@@ -5,6 +5,7 @@ package de.hdm.getthepoint.server.db.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,8 +22,12 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "Wissenstest", catalog = "getthepointdb")
-public class Wissenstest implements java.io.Serializable {
+public class Wissenstest extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7719728256949700400L;
 	private int id;
 	private Lehrender lehrender;
 	private Date startzeit;
@@ -75,7 +80,7 @@ public class Wissenstest implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "lehrender-id")
+	@JoinColumn(name = "lehrender_id")
 	public Lehrender getLehrender() {
 		return this.lehrender;
 	}
@@ -104,7 +109,7 @@ public class Wissenstest implements java.io.Serializable {
 		this.endzeit = endzeit;
 	}
 
-	@Column(name = "zeit-frage")
+	@Column(name = "zeit_frage")
 	public Integer getZeitFrage() {
 		return this.zeitFrage;
 	}

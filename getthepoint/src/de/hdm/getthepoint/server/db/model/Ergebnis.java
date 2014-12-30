@@ -1,4 +1,5 @@
 package de.hdm.getthepoint.server.db.model;
+
 // Generated 30.12.2014 21:24:32 by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
@@ -14,8 +15,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Ergebnis", catalog = "getthepointdb")
-public class Ergebnis implements java.io.Serializable {
+public class Ergebnis extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1090013602142615546L;
 	private int id;
 	private Antwort antwort;
 	private Frage frage;
@@ -51,7 +56,7 @@ public class Ergebnis implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "antwort-id")
+	@JoinColumn(name = "antwort_id")
 	public Antwort getAntwort() {
 		return this.antwort;
 	}
@@ -61,7 +66,7 @@ public class Ergebnis implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "frage-id")
+	@JoinColumn(name = "frage_id")
 	public Frage getFrage() {
 		return this.frage;
 	}
@@ -71,7 +76,7 @@ public class Ergebnis implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "student-id")
+	@JoinColumn(name = "student_id")
 	public Student getStudent() {
 		return this.student;
 	}
@@ -81,7 +86,7 @@ public class Ergebnis implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "wissenstest-id")
+	@JoinColumn(name = "wissenstest_id")
 	public Wissenstest getWissenstest() {
 		return this.wissenstest;
 	}

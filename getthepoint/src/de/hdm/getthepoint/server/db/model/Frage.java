@@ -4,6 +4,7 @@ package de.hdm.getthepoint.server.db.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,8 +19,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Frage", catalog = "getthepointdb")
-public class Frage implements java.io.Serializable {
+public class Frage extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8141793399933091960L;
 	private int id;
 	private Antwort antwort;
 	private Kategorie kategorie;
@@ -66,7 +71,7 @@ public class Frage implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "loesung", nullable = false)
+	@JoinColumn(name = "loesung", nullable = true)
 	public Antwort getAntwort() {
 		return this.antwort;
 	}

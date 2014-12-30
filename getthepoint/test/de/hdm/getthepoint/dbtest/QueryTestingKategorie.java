@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 import de.hdm.getthepoint.server.db.DataAcces;
+import de.hdm.getthepoint.server.db.model.Kategorie;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 public class QueryTestingKategorie {
@@ -14,10 +15,11 @@ public class QueryTestingKategorie {
 
 		DataAcces dataAcces = new DataAcces();
 
-		List<KategorieBo> liste = dataAcces.getAllKategorie();
+		List<Kategorie> liste = dataAcces.getAllKategorie();
 
-		for (KategorieBo kategorieBo : liste) {
-			System.out.println(kategorieBo.getBezeichnung());
+		for (Kategorie kategorie : liste) {
+			System.out.println(kategorie.getBezeichnung());
+			System.out.println(kategorie.getLehrender().getName());
 		}
 
 	}

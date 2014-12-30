@@ -16,8 +16,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Lehrender", catalog = "getthepointdb")
-public class Lehrender implements java.io.Serializable {
+public class Lehrender extends HibernateModel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8545825896179063884L;
 	private int id;
 	private String name;
 	private String vorname;
