@@ -6,8 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import de.hdm.getthepoint.server.db.mapper.KategorieMapper;
+import de.hdm.getthepoint.server.db.mapper.*;
+import de.hdm.getthepoint.server.db.model.Frage;
 import de.hdm.getthepoint.server.db.model.Kategorie;
+import de.hdm.getthepoint.shared.bo.FrageBo;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 /**
@@ -25,9 +27,11 @@ public class DataAcces {
 	private static final String PERSISTENCEUNIT = "getthepoint";
 
 	private KategorieMapper kategorieMapper;
+	private FrageMapper frageMapper;
 
 	public DataAcces() {
 		kategorieMapper = new KategorieMapper();
+		frageMapper = new FrageMapper();
 	}
 
 /**
@@ -45,6 +49,18 @@ public class DataAcces {
 		closeEntityManagerAndFactory();
 
 		return kategorieMapper.getModelsAsList(list);
+	}
+	
+	public List<FrageBo> getFragenByKategorie(int kategorie_id){
+		getEntityManager();
+
+		List<Frage> list = entityManager.createQuery(
+				"Select frage FROM Frage frage where frage.id = " + kategorie_id, Frage.class)
+				.getResultList();
+
+		closeEntityManagerAndFactory();
+
+		return frageMapper.getModelsAsList(list);
 	}
 
 	/**

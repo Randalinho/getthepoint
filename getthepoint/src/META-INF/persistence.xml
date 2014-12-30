@@ -23,6 +23,7 @@
         </description>
 
 		<class>de.hdm.getthepoint.server.db.model.Kategorie</class>
+		<class>de.hdm.getthepoint.server.db.model.Frage</class>
 
 		<properties>
 			<property name="datanucleus.storeManagerType" value="true" />

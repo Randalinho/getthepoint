@@ -2,7 +2,9 @@ package de.hdm.getthepoint.client.ui.widgets;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
+import com.gargoylesoftware.htmlunit.SgmlPage;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -15,34 +17,30 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
+import com.google.gwt.view.client.ListDataProvider;
 
 import de.hdm.getthepoint.shared.GetThePoint;
 import de.hdm.getthepoint.shared.GetThePointAsync;
+import de.hdm.getthepoint.shared.bo.FrageBo;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 public class Verwaltung extends Composite {
 
 	private static BackendUiBinder uiBinder = GWT.create(BackendUiBinder.class);
 
-	private static class Contact {
-		private final String address;
-		private final String name;
-
-		public Contact(String name, String address) {
-			this.name = name;
-			this.address = address;
-		}
-	}
-
-	private static List<Contact> CONTACTS = Arrays.asList(new Contact("John",
-			"123 Fourth Road"), new Contact("Mary", "222 Lancer Lane"),
-			new Contact("Zander", "94 Road Street"));
+	List<KategorieBo> katContainer = null;
+	List<FrageBo> fraContainer = null;
 
 	GetThePointAsync getThePoint = GWT.create(GetThePoint.class);
 
-	// Create a CellTable.
 	@UiField
-	CellTable<KategorieBo> cellTable = new CellTable<KategorieBo>();
+	CellTable<FrageBo> cellTable = new CellTable<FrageBo>();
+
+
+	
+	
+
+
 
 	@UiField
 	ListBox libkategorie;
@@ -54,12 +52,13 @@ public class Verwaltung extends Composite {
 
 		initWidget(uiBinder.createAndBindUi(this));
 
-		libkategorie.addItem("Test");
+//		coltext.setSortable(true);
 
 		getThePoint.getAllKategorien(new AsyncCallback<List<KategorieBo>>() {
 
 			@Override
 			public void onSuccess(List<KategorieBo> result) {
+				katContainer = result;
 				for (KategorieBo kategorie : result) {
 					libkategorie.addItem(kategorie.getBezeichnung());
 				}
@@ -73,17 +72,67 @@ public class Verwaltung extends Composite {
 			}
 		});
 
-		// Display 10 rows in one page
-		cellTable.setPageSize(10);
+		TextColumn<FrageBo> coltext = new TextColumn<FrageBo>() {
 
-		// Create name column.
-		TextColumn<KategorieBo> nameColumn = new TextColumn<KategorieBo>() {
 			@Override
-			public String getValue(KategorieBo kategorie) {
-				return kategorie.getBezeichnung();
+			public String getValue(FrageBo object) {
+				// TODO Auto-generated method stub
+				return object.getText();
+			}
+		};
+		
+		TextColumn<FrageBo> colschwierigkeit = new TextColumn<FrageBo>() {
+			
+			@Override
+			public String getValue(FrageBo object) {
+				// TODO Auto-generated method stub
+				return String.valueOf(object.getSchwierigkeit());
+			}
+		};
+		
+		cellTable.addColumn(coltext, "Frage");
+		cellTable.addColumn(colschwierigkeit, "Schwierigkeit");
+
+		cellTable.setVisibleRange(0, 3);
+//katContainer.get(libkategorie.getSelectedIndex()).getId()
+		
+
+		AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
+
+			@Override
+			protected void onRangeChanged(HasData<FrageBo> display) {
+				
+				getThePoint.getFragenByKategorie(1,
+						new AsyncCallback<List<FrageBo>>() {
+
+							@Override
+							public void onSuccess(List<FrageBo> result) {
+								 fraContainer = result;
+
+							}
+
+							@Override
+							public void onFailure(Throwable caught) {
+								// TODO Auto-generated method stub
+
+							}
+						});
+				
+				int start = display.getVisibleRange().getStart();
+			    int end = start + display.getVisibleRange().getLength();
+			    end = end >= fraContainer.size() ? fraContainer.size() : end;
+			    List<FrageBo> sub = fraContainer.subList(start, end);
+		        updateRowData(start, sub);
+
 			}
 		};
 
+		dataProvider.addDataDisplay(cellTable);
+		dataProvider.updateRowCount(fraContainer.size(), true);
+		
+		SimplePager pager = new SimplePager();
+		pager.setDisplay(cellTable);
+		
 		// // Make the name column sortable.
 		// nameColumn.setSortable(true);
 		//
