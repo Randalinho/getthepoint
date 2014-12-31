@@ -19,7 +19,16 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 	KategorieMapper kategorieMapper;
 	FrageMapper frageMapper;
 
+	/**
+	 * No Argument Konstruktor, darf nicht verändert werden. Die Initialisierung
+	 * der Klasse erfolgt über die Methode init().
+	 */
 	public GetThePointImpl() {
+		// Please do not change!
+	}
+
+	@Override
+	public void init() throws IllegalArgumentException {
 		dataAcces = new DataAcces();
 		kategorieMapper = new KategorieMapper();
 		frageMapper = new FrageMapper();

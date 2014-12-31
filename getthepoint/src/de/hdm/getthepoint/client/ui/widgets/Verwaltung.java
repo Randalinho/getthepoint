@@ -1,10 +1,7 @@
 package de.hdm.getthepoint.client.ui.widgets;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Vector;
 
-import com.gargoylesoftware.htmlunit.SgmlPage;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -17,7 +14,6 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
-import com.google.gwt.view.client.ListDataProvider;
 
 import de.hdm.getthepoint.shared.GetThePoint;
 import de.hdm.getthepoint.shared.GetThePointAsync;
@@ -36,12 +32,6 @@ public class Verwaltung extends Composite {
 	@UiField
 	CellTable<FrageBo> cellTable = new CellTable<FrageBo>();
 
-
-	
-	
-
-
-
 	@UiField
 	ListBox libkategorie;
 
@@ -50,9 +40,24 @@ public class Verwaltung extends Composite {
 
 	public Verwaltung() {
 
+		getThePoint.init(new AsyncCallback<Void>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onSuccess(Void result) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
 		initWidget(uiBinder.createAndBindUi(this));
 
-//		coltext.setSortable(true);
+		// coltext.setSortable(true);
 
 		getThePoint.getAllKategorien(new AsyncCallback<List<KategorieBo>>() {
 
@@ -80,58 +85,57 @@ public class Verwaltung extends Composite {
 				return object.getText();
 			}
 		};
-		
+
 		TextColumn<FrageBo> colschwierigkeit = new TextColumn<FrageBo>() {
-			
+
 			@Override
 			public String getValue(FrageBo object) {
 				// TODO Auto-generated method stub
 				return String.valueOf(object.getSchwierigkeit());
 			}
 		};
-		
+
 		cellTable.addColumn(coltext, "Frage");
 		cellTable.addColumn(colschwierigkeit, "Schwierigkeit");
 
 		cellTable.setVisibleRange(0, 3);
-//katContainer.get(libkategorie.getSelectedIndex()).getId()
+		// katContainer.get(libkategorie.getSelectedIndex()).getId()
 
-		getThePoint.getFragenByKategorie(1,
-				new AsyncCallback<List<FrageBo>>() {
+		getThePoint.getFragenByKategorie(1, new AsyncCallback<List<FrageBo>>() {
 
-					@Override
-					public void onSuccess(List<FrageBo> result) {
-						 fraContainer = result;
+			@Override
+			public void onSuccess(List<FrageBo> result) {
+				fraContainer = result;
 
-					}
+			}
 
-					@Override
-					public void onFailure(Throwable caught) {
-						System.out.println("Fehler");
+			@Override
+			public void onFailure(Throwable caught) {
+				System.out.println("Fehler");
 
-					}
-				});
+			}
+		});
 
 		AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
 
 			@Override
 			protected void onRangeChanged(HasData<FrageBo> display) {
-				
+
 				int start = display.getVisibleRange().getStart();
-			    int end = start + display.getVisibleRange().getLength();
-			    end = end >= fraContainer.size() ? fraContainer.size() : end;
-			    List<FrageBo> sub = fraContainer.subList(start, end);
-		        updateRowData(start, sub);
+				int end = start + display.getVisibleRange().getLength();
+				end = end >= fraContainer.size() ? fraContainer.size() : end;
+				List<FrageBo> sub = fraContainer.subList(start, end);
+				updateRowData(start, sub);
 
 			}
 		};
 
 		dataProvider.addDataDisplay(cellTable);
 		dataProvider.updateRowCount(fraContainer.size(), true);
-		
+
 		SimplePager pager = new SimplePager();
 		pager.setDisplay(cellTable);
-		
+
 		// // Make the name column sortable.
 		// nameColumn.setSortable(true);
 		//

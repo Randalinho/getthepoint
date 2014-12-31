@@ -11,7 +11,11 @@ import de.hdm.getthepoint.shared.bo.KategorieBo;
 @RemoteServiceRelativePath("getthepoint")
 public interface GetThePoint extends RemoteService {
 
+	public void init() throws IllegalArgumentException;
+
 	public List<KategorieBo> getAllKategorien() throws IllegalArgumentException;
-	
-	public List<FrageBo> getFragenByKategorie(int kategorie_id) throws IllegalArgumentException;
+
+	public List<FrageBo> getFragenByKategorie(int kategorie_id)
+			throws IllegalArgumentException;
+
 }
