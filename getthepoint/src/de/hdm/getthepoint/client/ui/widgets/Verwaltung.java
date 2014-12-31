@@ -95,28 +95,27 @@ public class Verwaltung extends Composite {
 
 		cellTable.setVisibleRange(0, 3);
 //katContainer.get(libkategorie.getSelectedIndex()).getId()
-		
+
+		getThePoint.getFragenByKategorie(1,
+				new AsyncCallback<List<FrageBo>>() {
+
+					@Override
+					public void onSuccess(List<FrageBo> result) {
+						 fraContainer = result;
+
+					}
+
+					@Override
+					public void onFailure(Throwable caught) {
+						System.out.println("Fehler");
+
+					}
+				});
 
 		AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
 
 			@Override
 			protected void onRangeChanged(HasData<FrageBo> display) {
-				
-				getThePoint.getFragenByKategorie(1,
-						new AsyncCallback<List<FrageBo>>() {
-
-							@Override
-							public void onSuccess(List<FrageBo> result) {
-								 fraContainer = result;
-
-							}
-
-							@Override
-							public void onFailure(Throwable caught) {
-								// TODO Auto-generated method stub
-
-							}
-						});
 				
 				int start = display.getVisibleRange().getStart();
 			    int end = start + display.getVisibleRange().getLength();
