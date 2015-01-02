@@ -121,17 +121,17 @@ public class Verwaltung extends Composite {
 			@Override
 			protected void onRangeChanged(HasData<FrageBo> display) {
 
-				int start = display.getVisibleRange().getStart();
-				int end = start + display.getVisibleRange().getLength();
-				end = end >= fraContainer.size() ? fraContainer.size() : end;
-				List<FrageBo> sub = fraContainer.subList(start, end);
-				updateRowData(start, sub);
+//				int start = display.getVisibleRange().getStart();
+//				int end = start + display.getVisibleRange().getLength();
+//				end = end >= fraContainer.size() ? fraContainer.size() : end;
+//				List<FrageBo> sub = fraContainer.subList(start, end);
+//				updateRowData(start, sub);
 
 			}
 		};
 
-		dataProvider.addDataDisplay(cellTable);
-		dataProvider.updateRowCount(fraContainer.size(), true);
+//		dataProvider.addDataDisplay(cellTable);
+//		dataProvider.updateRowCount(fraContainer.size(), true);
 
 		SimplePager pager = new SimplePager();
 		pager.setDisplay(cellTable);
