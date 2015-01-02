@@ -31,10 +31,17 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 		return kategorieMapper.getModelsAsList(dataAcces.getAllKategorie());
 
 	}
+	
+	@Override
+	public List<FrageBo> getAllFragen() throws IllegalArgumentException {
+		return frageMapper.getModelsAsList(dataAcces.getAllFrage());
+	}
 
 	public List<FrageBo> getFragenByKategorie(int kategorie_id)
 			throws IllegalArgumentException {
 		return frageMapper.getModelsAsList(dataAcces
 				.getFragenByKategorie(kategorie_id));
 	}
+
+
 }

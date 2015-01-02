@@ -4,17 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
+import com.google.gwt.view.client.CellPreviewEvent;
 import com.google.gwt.view.client.HasData;
+import com.google.gwt.view.client.NoSelectionModel;
+import com.google.gwt.view.client.SelectionChangeEvent;
 
 import de.hdm.getthepoint.shared.GetThePoint;
 import de.hdm.getthepoint.shared.GetThePointAsync;
@@ -36,6 +44,109 @@ public class Verwaltung extends Composite {
 	@UiField
 	ListBox libkategorie;
 
+	@UiHandler("libkategorie")
+	void onChange(ChangeEvent e) {
+		cellTable.setRowCount(0);
+		if (libkategorie.getSelectedIndex() != 0) {
+
+			AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
+
+				@Override
+				protected void onRangeChanged(final HasData<FrageBo> display) {
+
+					getThePoint.getFragenByKategorie(
+							katContainer.get(
+									libkategorie.getSelectedIndex() - 1)
+									.getId(),
+							new AsyncCallback<List<FrageBo>>() {
+
+								@Override
+								public void onFailure(Throwable caught) {
+									// TODO Auto-generated method stub
+
+								}
+
+								@Override
+								public void onSuccess(List<FrageBo> result) {
+
+									fraContainer = result;
+									int start = display.getVisibleRange()
+											.getStart();
+									int end = start
+											+ display.getVisibleRange()
+													.getLength();
+									end = end >= fraContainer.size() ? fraContainer
+											.size() : end;
+									List<FrageBo> sub = fraContainer.subList(
+											start, end);
+									updateRowData(start, sub);
+
+								}
+							});
+
+				}
+			};
+
+			dataProvider.addDataDisplay(cellTable);
+			dataProvider.updateRowCount(fraContainer.size(), true);
+
+		} else {
+
+			AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
+
+				@Override
+				protected void onRangeChanged(final HasData<FrageBo> display) {
+
+					getThePoint
+							.getAllFragen(new AsyncCallback<List<FrageBo>>() {
+
+								@Override
+								public void onFailure(Throwable caught) {
+									// TODO Auto-generated method stub
+
+								}
+
+								@Override
+								public void onSuccess(List<FrageBo> result) {
+									fraContainer = result;
+									int start = display.getVisibleRange()
+											.getStart();
+									int end = start
+											+ display.getVisibleRange()
+													.getLength();
+									end = end >= fraContainer.size() ? fraContainer
+											.size() : end;
+									List<FrageBo> sub = fraContainer.subList(
+											start, end);
+									updateRowData(start, sub);
+
+								}
+							});
+
+				}
+			};
+
+			dataProvider.addDataDisplay(cellTable);
+			dataProvider.updateRowCount(fraContainer.size(), true);
+
+		}
+		
+		final NoSelectionModel<FrageBo> selectionModel = new NoSelectionModel<FrageBo>();
+		selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+			
+			@Override
+			public void onSelectionChange(SelectionChangeEvent event) {
+				FrageBo selFrage = selectionModel.getLastSelectedObject();
+				
+				
+				
+			}
+		});
+		
+		cellTable.setSelectionModel(selectionModel);
+		
+	}
+	
 	interface BackendUiBinder extends UiBinder<Widget, Verwaltung> {
 	}
 
@@ -65,6 +176,7 @@ public class Verwaltung extends Composite {
 			@Override
 			public void onSuccess(List<KategorieBo> result) {
 				katContainer = result;
+				libkategorie.addItem("(alle)");
 				for (KategorieBo kategorie : result) {
 					libkategorie.addItem(kategorie.getBezeichnung());
 				}
@@ -102,96 +214,36 @@ public class Verwaltung extends Composite {
 		cellTable.setVisibleRange(0, 3);
 		// katContainer.get(libkategorie.getSelectedIndex()).getId()
 
-		getThePoint.getFragenByKategorie(1, new AsyncCallback<List<FrageBo>>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onSuccess(List<FrageBo> result) {
-				fraContainer = result;
-
-			}
-		});
-
 		AsyncDataProvider<FrageBo> dataProvider = new AsyncDataProvider<FrageBo>() {
 
 			@Override
-			protected void onRangeChanged(HasData<FrageBo> display) {
+			protected void onRangeChanged(final HasData<FrageBo> display) {
 
-				int start = display.getVisibleRange().getStart();
-				int end = start + display.getVisibleRange().getLength();
-				end = end >= fraContainer.size() ? fraContainer.size() : end;
-				List<FrageBo> sub = fraContainer.subList(start, end);
-				updateRowData(start, sub);
+				getThePoint.getAllFragen(new AsyncCallback<List<FrageBo>>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+
+					}
+
+					@Override
+					public void onSuccess(List<FrageBo> result) {
+						fraContainer = result;
+						int start = display.getVisibleRange().getStart();
+						int end = start + display.getVisibleRange().getLength();
+						end = end >= fraContainer.size() ? fraContainer.size()
+								: end;
+						List<FrageBo> sub = fraContainer.subList(start, end);
+						updateRowData(start, sub);
+
+					}
+				});
 
 			}
 		};
-
 		dataProvider.addDataDisplay(cellTable);
 		dataProvider.updateRowCount(fraContainer.size(), true);
-
-		SimplePager pager = new SimplePager();
-		pager.setDisplay(cellTable);
-
-		// // Make the name column sortable.
-		// nameColumn.setSortable(true);
-		//
-		// // Create address column.
-		// TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
-		// @Override
-		// public String getValue(Contact contact) {
-		// return contact.address;
-		// }
-		// };
-		//
-		// // Add the columns.
-		// cellTable.addColumn(nameColumn, "Name");
-		// // cellTable.addColumn(addressColumn, "Adresse");
-		//
-		// // Set the total row count. You might send an RPC request to
-		// determine
-		// // the
-		// // total row count.
-		// cellTable.setRowCount(CONTACTS.size(), true);
-		//
-		// // Set the range to display. In this case, our visible range is
-		// smaller
-		// // than
-		// // the data set.
-		// cellTable.setVisibleRange(0, 3);
-		//
-		// // Associate an async data provider to the table
-		// // XXX: Use AsyncCallback in the method onRangeChanged
-		// // to actaully get the data from the server side
-		// AsyncDataProvider<Contact> provider = new
-		// AsyncDataProvider<Contact>() {
-		// @Override
-		// protected void onRangeChanged(HasData<Contact> display) {
-		// int start = display.getVisibleRange().getStart();
-		// int end = start + display.getVisibleRange().getLength();
-		// end = end >= CONTACTS.size() ? CONTACTS.size() : end;
-		// List<Contact> sub = CONTACTS.subList(start, end);
-		// updateRowData(start, sub);
-		// }
-		// };
-		//
-		// provider.addDataDisplay(cellTable);
-		// provider.updateRowCount(CONTACTS.size(), true);
-		//
-		// SimplePager pager = new SimplePager();
-		// pager.setDisplay(cellTable);
-		//
-		// // VerticalPanel vp = new VerticalPanel();
-		// // vp.add(cellTable);
-		// // vp.add(pager);
-		// //
-		// // // Add it to the root panel.
-		// // RootPanel.get().add(vp);
-
 	}
 
 }

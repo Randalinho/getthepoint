@@ -40,6 +40,13 @@ public class DataAcces {
 		return list;
 	}
 
+	public List<Frage> getAllFrage() {
+		List<Frage> list = entityManager.createQuery(
+				"SELECT frage FROM Frage frage", Frage.class).getResultList();
+		return list;
+
+	}
+
 	public List<Frage> getFragenByKategorie(int kategorie_id) {
 
 		List<Frage> list = entityManager.createQuery(

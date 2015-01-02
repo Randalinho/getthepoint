@@ -12,6 +12,8 @@ public interface GetThePointAsync {
 	void init(AsyncCallback<Void> callback);
 
 	void getAllKategorien(AsyncCallback<List<KategorieBo>> callback);
+	
+	void getAllFragen(AsyncCallback<List<FrageBo>> callback);
 
 	void getFragenByKategorie(int kategorie_id,
 			AsyncCallback<List<FrageBo>> callback);

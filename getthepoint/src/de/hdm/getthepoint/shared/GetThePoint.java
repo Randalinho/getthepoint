@@ -14,6 +14,8 @@ public interface GetThePoint extends RemoteService {
 	public void init() throws IllegalArgumentException;
 
 	public List<KategorieBo> getAllKategorien() throws IllegalArgumentException;
+	
+	public List<FrageBo> getAllFragen() throws IllegalArgumentException;
 
 	public List<FrageBo> getFragenByKategorie(int kategorie_id)
 			throws IllegalArgumentException;

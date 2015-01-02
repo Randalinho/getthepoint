@@ -5,6 +5,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.RootPanel;
 
 import de.hdm.getthepoint.client.ui.widgets.Quiz;
+import de.hdm.getthepoint.client.ui.widgets.Verwaltung;
 import de.hdm.getthepoint.shared.GetThePoint;
 import de.hdm.getthepoint.shared.GetThePointAsync;
 import de.hdm.getthepoint.shared.bo.FrageBo;
@@ -21,7 +22,7 @@ public class Getthepoint implements EntryPoint {
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.";
 
-	final Quiz myQuiz = new Quiz();
+	final Verwaltung verw = new Verwaltung();
 	FrageBo frage;
 	String string;
 
@@ -47,6 +48,6 @@ public class Getthepoint implements EntryPoint {
 
 		// final Label errorLabel = new Label();
 		// RootPanel.get().add(nameField);
-		RootPanel.get().add(myQuiz);
+		RootPanel.get("content").add(verw);
 	}
 }
