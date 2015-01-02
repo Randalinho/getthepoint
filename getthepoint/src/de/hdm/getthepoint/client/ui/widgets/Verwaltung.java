@@ -1,5 +1,6 @@
 package de.hdm.getthepoint.client.ui.widgets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
@@ -24,8 +25,8 @@ public class Verwaltung extends Composite {
 
 	private static BackendUiBinder uiBinder = GWT.create(BackendUiBinder.class);
 
-	List<KategorieBo> katContainer = null;
-	List<FrageBo> fraContainer = null;
+	List<KategorieBo> katContainer = new ArrayList<KategorieBo>();
+	List<FrageBo> fraContainer = new ArrayList<FrageBo>();
 
 	GetThePointAsync getThePoint = GWT.create(GetThePoint.class);
 
@@ -104,14 +105,14 @@ public class Verwaltung extends Composite {
 		getThePoint.getFragenByKategorie(1, new AsyncCallback<List<FrageBo>>() {
 
 			@Override
-			public void onSuccess(List<FrageBo> result) {
-				fraContainer = result;
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
 
 			}
 
 			@Override
-			public void onFailure(Throwable caught) {
-				System.out.println("Fehler");
+			public void onSuccess(List<FrageBo> result) {
+				fraContainer = result;
 
 			}
 		});
@@ -121,17 +122,17 @@ public class Verwaltung extends Composite {
 			@Override
 			protected void onRangeChanged(HasData<FrageBo> display) {
 
-//				int start = display.getVisibleRange().getStart();
-//				int end = start + display.getVisibleRange().getLength();
-//				end = end >= fraContainer.size() ? fraContainer.size() : end;
-//				List<FrageBo> sub = fraContainer.subList(start, end);
-//				updateRowData(start, sub);
+				int start = display.getVisibleRange().getStart();
+				int end = start + display.getVisibleRange().getLength();
+				end = end >= fraContainer.size() ? fraContainer.size() : end;
+				List<FrageBo> sub = fraContainer.subList(start, end);
+				updateRowData(start, sub);
 
 			}
 		};
 
-//		dataProvider.addDataDisplay(cellTable);
-//		dataProvider.updateRowCount(fraContainer.size(), true);
+		dataProvider.addDataDisplay(cellTable);
+		dataProvider.updateRowCount(fraContainer.size(), true);
 
 		SimplePager pager = new SimplePager();
 		pager.setDisplay(cellTable);
