@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+import de.hdm.getthepoint.shared.bo.AntwortBo;
 import de.hdm.getthepoint.shared.bo.FrageBo;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
@@ -19,5 +20,7 @@ public interface GetThePoint extends RemoteService {
 
 	public List<FrageBo> getFragenByKategorie(int kategorie_id)
 			throws IllegalArgumentException;
+	
+	public List<AntwortBo> getAntwortenByFrage(int frage_id) throws IllegalArgumentException;
 
 }

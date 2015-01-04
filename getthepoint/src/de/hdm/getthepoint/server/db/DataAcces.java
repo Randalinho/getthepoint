@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import de.hdm.getthepoint.server.db.model.Antwort;
 import de.hdm.getthepoint.server.db.model.Frage;
 import de.hdm.getthepoint.server.db.model.Kategorie;
 
@@ -52,6 +53,14 @@ public class DataAcces {
 		List<Frage> list = entityManager.createQuery(
 				"Select frage FROM Frage frage where frage.kategorie = "
 						+ kategorie_id, Frage.class).getResultList();
+
+		return list;
+	}
+
+	public List<Antwort> getAntwortenByFrage(int frage_id) {
+		List<Antwort> list = entityManager.createQuery(
+				"Select antwort FROM Antwort antwort where antwort.frage = "
+						+ frage_id, Antwort.class).getResultList();
 
 		return list;
 	}

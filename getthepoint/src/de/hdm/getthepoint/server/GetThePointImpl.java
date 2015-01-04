@@ -5,9 +5,9 @@ import java.util.List;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 import de.hdm.getthepoint.server.db.DataAcces;
-import de.hdm.getthepoint.server.db.mapper.FrageMapper;
-import de.hdm.getthepoint.server.db.mapper.KategorieMapper;
+import de.hdm.getthepoint.server.db.mapper.*;
 import de.hdm.getthepoint.shared.GetThePoint;
+import de.hdm.getthepoint.shared.bo.AntwortBo;
 import de.hdm.getthepoint.shared.bo.FrageBo;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
@@ -18,6 +18,7 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 	DataAcces dataAcces;
 	KategorieMapper kategorieMapper;
 	FrageMapper frageMapper;
+	AntwortMapper antwortMapper;
 
 	@Override
 	public void init() throws IllegalArgumentException {
@@ -31,7 +32,7 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 		return kategorieMapper.getModelsAsList(dataAcces.getAllKategorie());
 
 	}
-	
+
 	@Override
 	public List<FrageBo> getAllFragen() throws IllegalArgumentException {
 		return frageMapper.getModelsAsList(dataAcces.getAllFrage());
@@ -43,5 +44,12 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 				.getFragenByKategorie(kategorie_id));
 	}
 
+	@Override
+	public List<AntwortBo> getAntwortenByFrage(int frage_id)
+			throws IllegalArgumentException {
+		return antwortMapper.getModelsAsList(dataAcces.getAntwortenByFrage(frage_id));
+	}
+
+	
 
 }

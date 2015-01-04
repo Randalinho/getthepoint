@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+import de.hdm.getthepoint.shared.bo.AntwortBo;
 import de.hdm.getthepoint.shared.bo.FrageBo;
 import de.hdm.getthepoint.shared.bo.KategorieBo;
 
@@ -17,5 +18,7 @@ public interface GetThePointAsync {
 
 	void getFragenByKategorie(int kategorie_id,
 			AsyncCallback<List<FrageBo>> callback);
-	
+
+	void getAntwortenByFrage(int frage_id,
+			AsyncCallback<List<AntwortBo>> callback);
 }
