@@ -18,9 +18,6 @@ import javax.persistence.Table;
 @Table(name = "Student", catalog = "getthepointdb")
 public class Student extends HibernateModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 9181040556325482020L;
 	private int id;
 	private String matrikelNr;

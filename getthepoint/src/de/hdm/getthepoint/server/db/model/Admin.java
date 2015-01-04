@@ -14,9 +14,6 @@ import javax.persistence.Table;
 @Table(name = "Admin", catalog = "getthepointdb")
 public class Admin extends HibernateModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 895799225419210507L;
 	private int id;
 	private String login;

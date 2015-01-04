@@ -17,9 +17,6 @@ import javax.persistence.Table;
 @Table(name = "Zuordung_Wissenstest_Frage", catalog = "getthepointdb")
 public class ZuordungWissenstestFrage extends HibernateModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8472971881473721757L;
 	private int id;
 	private Frage frage;

@@ -17,9 +17,6 @@ import javax.persistence.Table;
 @Table(name = "Ergebnis", catalog = "getthepointdb")
 public class Ergebnis extends HibernateModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1090013602142615546L;
 	private int id;
 	private Antwort antwort;

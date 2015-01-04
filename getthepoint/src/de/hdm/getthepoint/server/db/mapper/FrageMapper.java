@@ -35,8 +35,7 @@ public class FrageMapper implements DbMapperInterface<FrageBo, Frage> {
 		FrageBo frageBo = new FrageBo();
 		frageBo.setId(dbmodel.getId());
 		frageBo.setText(dbmodel.getText());
-		// frageBo.setBild(dbmodel.getBild()); TODO richtigen Datentyp für Bild
-		// TODO Kategorie
+		frageBo.setBild(dbmodel.getBild());		// TODO Kategorie
 
 		switch (dbmodel.getSchwierigkeit()) {
 		case 0:

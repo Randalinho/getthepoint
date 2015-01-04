@@ -24,9 +24,6 @@ import javax.persistence.TemporalType;
 @Table(name = "Wissenstest", catalog = "getthepointdb")
 public class Wissenstest extends HibernateModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7719728256949700400L;
 	private int id;
 	private Lehrender lehrender;
