@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 
 import de.hdm.getthepoint.server.db.model.Frage;
 import de.hdm.getthepoint.server.db.model.Kategorie;
+import de.hdm.getthepoint.server.db.model.Wissenstest;
 
 /**
  * Klasse f&uuml;r alle Datenbankzugriffe.
@@ -27,8 +28,20 @@ public class DataAcces {
 		getEntityManager();
 	}
 
+	/**
+	 * Methode zum Abrufen aller {@link Wissenstest}.
+	 * @return
+	 */
+	public List<Wissenstest> getAllWissentests() {
+		List<Wissenstest> list = entityManager.createQuery(
+				"Select wissenstest FROM Wissenstest wissenstest",
+				Wissenstest.class).getResultList();
+		return list;
+
+	}
+
 /**
-	 * Methode zum Abrugen aller {@link Kategorie). Diese werden direkt in eine Liste von KategorieBo gemappt.
+	 * Methode zum Abrugen aller {@link Kategorie).
 	 * @return
 	 */
 	public List<Kategorie> getAllKategorie() {

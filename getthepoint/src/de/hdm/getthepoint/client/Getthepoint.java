@@ -1,14 +1,9 @@
 package de.hdm.getthepoint.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.RootPanel;
 
-import de.hdm.getthepoint.client.ui.widgets.Quiz;
 import de.hdm.getthepoint.client.ui.widgets.Verwaltung;
-import de.hdm.getthepoint.shared.GetThePoint;
-import de.hdm.getthepoint.shared.GetThePointAsync;
-import de.hdm.getthepoint.shared.bo.FrageBo;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -23,31 +18,12 @@ public class Getthepoint implements EntryPoint {
 			+ "connection and try again.";
 
 	final Verwaltung verw = new Verwaltung();
-	FrageBo frage;
-	String string;
 
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
 
-		// getThePoint.getFragebyId(1, new AsyncCallback<FrageBo>() {
-		//
-		// @Override
-		// public void onSuccess(FrageBo result) {
-		// frage = result;
-		//
-		// }
-		//
-		// @Override
-		// public void onFailure(Throwable caught) {
-		// System.out.println("Failed to Load Frage by Id");
-		//
-		// }
-		// });
-
-		// final Label errorLabel = new Label();
-		// RootPanel.get().add(nameField);
 		RootPanel.get("content").add(verw);
 	}
 }

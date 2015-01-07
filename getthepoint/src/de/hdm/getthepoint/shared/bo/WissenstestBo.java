@@ -1,8 +1,6 @@
-	package de.hdm.getthepoint.shared.bo;
-import java.util.Date;
+package de.hdm.getthepoint.shared.bo;
 
-import de.hdm.getthepoint.shared.enums.StartTyp;
-
+import java.util.Date;
 
 /**
  * @author Fabian
@@ -21,8 +19,6 @@ public class WissenstestBo extends BusinessObject {
 	private int bearbeitungszeit;
 
 	private boolean random;
-
-	private StartTyp startTyp;
 
 	private boolean aktiv;
 
@@ -66,14 +62,6 @@ public class WissenstestBo extends BusinessObject {
 
 	public void setRandom(boolean random) {
 		this.random = random;
-	}
-
-	public StartTyp getStartTyp() {
-		return startTyp;
-	}
-
-	public void setStartTyp(StartTyp startTyp) {
-		this.startTyp = startTyp;
 	}
 
 	public boolean isAktiv() {
