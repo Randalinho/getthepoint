@@ -5,21 +5,17 @@ import java.util.List;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.cellview.client.CellTable;
-import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
-import com.google.gwt.view.client.CellPreviewEvent;
 import com.google.gwt.view.client.HasData;
 import com.google.gwt.view.client.NoSelectionModel;
 import com.google.gwt.view.client.SelectionChangeEvent;
@@ -44,6 +40,10 @@ public class Verwaltung extends Composite {
 	@UiField
 	ListBox libkategorie;
 
+	@UiField
+	FlowPanel wissenstest;
+	
+		
 	@UiHandler("libkategorie")
 	void onChange(ChangeEvent e) {
 		cellTable.setRowCount(0);
@@ -130,27 +130,31 @@ public class Verwaltung extends Composite {
 			dataProvider.updateRowCount(fraContainer.size(), true);
 
 		}
-		
+
 		final NoSelectionModel<FrageBo> selectionModel = new NoSelectionModel<FrageBo>();
-		selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
-			
-			@Override
-			public void onSelectionChange(SelectionChangeEvent event) {
-				FrageBo selFrage = selectionModel.getLastSelectedObject();
-				
-				
-				
-			}
-		});
-		
+		selectionModel
+				.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+
+					@Override
+					public void onSelectionChange(SelectionChangeEvent event) {
+						FrageBo selFrage = selectionModel
+								.getLastSelectedObject();
+
+					}
+				});
+
 		cellTable.setSelectionModel(selectionModel);
-		
+
 	}
-	
+
 	interface BackendUiBinder extends UiBinder<Widget, Verwaltung> {
 	}
 
 	public Verwaltung() {
+		
+		Wissenstest wissenstestWidget = new  Wissenstest();
+		wissenstest = new FlowPanel();
+		wissenstest.add(wissenstestWidget);
 
 		getThePoint.init(new AsyncCallback<Void>() {
 

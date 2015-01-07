@@ -34,10 +34,12 @@ public class Quiz extends Composite implements HasText {
 		button.setText(firstName);
 	}
 
+	@Override
 	public void setText(String text) {
 		button.setText(text);
 	}
 
+	@Override
 	public String getText() {
 		return button.getText();
 	}

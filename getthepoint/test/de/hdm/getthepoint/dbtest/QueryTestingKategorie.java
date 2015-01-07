@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import de.hdm.getthepoint.server.db.DataAcces;
 import de.hdm.getthepoint.server.db.model.Kategorie;
-import de.hdm.getthepoint.shared.bo.KategorieBo;
 
 public class QueryTestingKategorie {
 

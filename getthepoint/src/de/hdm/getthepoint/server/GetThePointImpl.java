@@ -37,6 +37,7 @@ public class GetThePointImpl extends RemoteServiceServlet implements
 		return frageMapper.getModelsAsList(dataAcces.getAllFrage());
 	}
 
+	@Override
 	public List<FrageBo> getFragenByKategorie(int kategorie_id)
 			throws IllegalArgumentException {
 		return frageMapper.getModelsAsList(dataAcces

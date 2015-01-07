@@ -14,7 +14,9 @@
 					<g:customHeader>
 						<g:Label>Wissenstest</g:Label>
 					</g:customHeader>
-					<g:Label>Wissenstest</g:Label>
+					<g:FlowPanel ui:field="wissenstest">
+						<g:Label text="Kategorie" width="70px" />
+					</g:FlowPanel>
 				</g:tab>
 				<g:tab>
 					<g:customHeader>

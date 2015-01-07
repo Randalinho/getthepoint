@@ -49,6 +49,7 @@ public class BusinessObject implements Serializable {
 	   * Erzeugen einer einfachen textuellen Darstellung der jeweiligen Instanz.
 	   * Dies kann selbstverständlich in Subklassen überschrieben werden.
 	   */
+	@Override
 	public String toString() {
 		/*
 	     * Wir geben den Klassennamen gefolgt von der ID des Objekts zurück.
@@ -65,6 +66,7 @@ public class BusinessObject implements Serializable {
 	   * mehr Intelligenz verleihen.
 	   * </p>
 	   */
+	@Override
 	public boolean equals(Object o) {
 		/*
 	     * Abfragen, ob ein Objekt ungleich NULL ist und ob ein Objekt gecastet
@@ -99,6 +101,7 @@ public class BusinessObject implements Serializable {
 	   * verwendenden <code>hashCode</code>, um initial ein Objekt (z.B. in einer Hashtable) zu identifizieren. Erst danach
 	   * würde mit <code>equals</code> festgestellt, ob es sich tatsächlich um das gesuchte Objekt handelt.
 	   */
+	@Override
 	public int hashCode() {
 		return this.id;
 	}

@@ -22,6 +22,7 @@ public class Getthepoint implements EntryPoint {
 	/**
 	 * This is the entry point method.
 	 */
+	@Override
 	public void onModuleLoad() {
 
 		RootPanel.get("content").add(verw);
