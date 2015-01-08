@@ -6,51 +6,37 @@
 	</ui:style>
 	<g:HTMLPanel>
 
-		<g:VerticalPanel width="800px" height="240px">
-
-			<g:TabLayoutPanel barHeight="30" barUnit="PX" width="100%"
-				height="700px">
-				<g:tab>
-					<g:customHeader>
-						<g:Label>Wissenstest</g:Label>
-					</g:customHeader>
-					<g:FlowPanel ui:field="wissenstest">
-						<g:Label text="Kategorie" width="70px" />
-					</g:FlowPanel>
-				</g:tab>
-				<g:tab>
-					<g:customHeader>
-						<g:Label>Fragenpool</g:Label>
-					</g:customHeader>
-					<g:FlowPanel>
-						<g:Label text="Kategorie" width="70px" />
-						<g:ListBox ui:field="libkategorie" />
-						<c:CellTable pageSize='15' ui:field='cellTable' width="100%">
-
-						</c:CellTable>
-
-						<g:Label text="Antwortmöglichkeit 1" width="150px" />
-						<g:TextBox ui:field="tbantw1" name="Antwortmöglichkeit 1"></g:TextBox>
-						<g:Label text="Antwortmöglichkeit 2" width="150px" />
-						<g:TextBox ui:field="tbantw2" name="Antwortmöglichkeit 2"></g:TextBox>
-						<g:Label text="Antwortmöglichkeit 3" width="150px" />
-						<g:TextBox ui:field="tbantw3" name="Antwortmöglichkeit 3"></g:TextBox>
-						<g:Label text="Antwortmöglichkeit 4" width="150px" />
-						<g:TextBox ui:field="tbantw4" name="Antwortmöglichkeit 4"></g:TextBox>
-
-					</g:FlowPanel>
-				</g:tab>
-				<g:tab>
-					<g:customHeader>
-						<g:Label>Auswertungen</g:Label>
-					</g:customHeader>
-					<g:Label width="102px" height="37px">Auswertungen</g:Label>
-				</g:tab>
 
 
-			</g:TabLayoutPanel>
+		<g:TabLayoutPanel barHeight="30" barUnit="PX" width="100%"
+			height="700px">
+			<g:tab>
+				<g:customHeader>
+					<g:Label>Wissenstest</g:Label>
+				</g:customHeader>
+				<g:LayoutPanel ui:field="panWissenstest">
 
-		</g:VerticalPanel>
+				</g:LayoutPanel>
+			</g:tab>
+			<g:tab>
+				<g:customHeader>
+					<g:Label>Fragenpool</g:Label>
+				</g:customHeader>
+				<g:LayoutPanel ui:field="panFragenpool" width="100%"
+					height="700px">
+				</g:LayoutPanel>
+			</g:tab>
+			<g:tab>
+				<g:customHeader>
+					<g:Label>Auswertungen</g:Label>
+				</g:customHeader>
+				<g:Label width="102px" height="37px">Auswertungen</g:Label>
+			</g:tab>
+
+
+		</g:TabLayoutPanel>
+
+
 
 	</g:HTMLPanel>
 </ui:UiBinder> 

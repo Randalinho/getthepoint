@@ -1,10 +1,45 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.google.gwt.user.cellview.client">
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel>
-		<g:ListBox width="122px"/>
-	</g:HTMLPanel>
+	<g:LayoutPanel>
+		<g:layer>
+			<g:Label text="Kategorie" width="70px" />
+		</g:layer>
+		<g:layer>
+			<g:ListBox ui:field="libkategorie" />
+		</g:layer>
+		<g:layer>
+			<c:DataGrid pageSize='15' ui:field='dataGrid' width="100%">
+			</c:DataGrid>
+		</g:layer>
+
+		<g:layer>
+			<g:Label text="Antwortmöglichkeit 1" width="150px" />
+		</g:layer>
+		<g:layer>
+			<g:TextBox ui:field="tbantw1" name="Antwortmöglichkeit 1"></g:TextBox>
+		</g:layer>
+		<g:layer>
+			<g:Label text="Antwortmöglichkeit 2" width="150px" />
+		</g:layer>
+		<g:layer>
+			<g:TextBox ui:field="tbantw2" name="Antwortmöglichkeit 2"></g:TextBox>
+		</g:layer>
+		<g:layer>
+			<g:Label text="Antwortmöglichkeit 3" width="150px" />
+		</g:layer>
+		<g:layer>
+			<g:TextBox ui:field="tbantw3" name="Antwortmöglichkeit 3"></g:TextBox>
+		</g:layer>
+		<g:layer>
+			<g:Label text="Antwortmöglichkeit 4" width="150px" />
+		</g:layer>
+		<g:layer>
+			<g:TextBox ui:field="tbantw4" name="Antwortmöglichkeit 4"></g:TextBox>
+		</g:layer>
+	</g:LayoutPanel>
+
 </ui:UiBinder> 

@@ -7,11 +7,10 @@
                         width: 600px;
                         border: 1px solid #ccc;
 	</ui:style>
-	
-	<g:FlowPanel>
-	<g:Label text="Kategorie" width="70px" />
-	
-	</g:FlowPanel>
-
+	<g:LayoutPanel>
+		<g:layer>
+			<g:Label text="Kategorie" width="70px" />
+		</g:layer>
+	</g:LayoutPanel>
 
 </ui:UiBinder> 
